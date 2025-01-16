@@ -1,0 +1,259 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:name1",
+ "creation": "2024-07-01 14:50:14.136177",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "project_type",
+  "project_delivery_date",
+  "status",
+  "column_break_juec",
+  "expected_start_date",
+  "expected_end_date",
+  "priority",
+  "service",
+  "customer_details_section",
+  "customer",
+  "sales_order",
+  "column_break_nzbm",
+  "advance_entry",
+  "advance_amount",
+  "section_break_pgei",
+  "retentation_percentage",
+  "retentation_amt",
+  "column_break_tlzb",
+  "amount_after_retentation",
+  "project_amount",
+  "section_break_updt",
+  "progress_entry",
+  "column_break_xcaf",
+  "average__of_completion",
+  "section_break_snci",
+  "project_stage_table",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Project Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "project_delivery_date",
+   "fieldtype": "Date",
+   "label": "Project Delivery Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nOpen\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "column_break_juec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "expected_start_date",
+   "fieldtype": "Date",
+   "label": "Expected Start Date"
+  },
+  {
+   "bold": 1,
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected End Date"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "column_break_nzbm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "advance_entry",
+   "fieldtype": "Data",
+   "label": "Advance Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_pgei",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "retentation_percentage",
+   "fieldtype": "Percent",
+   "label": "Retentation Percentage",
+   "precision": "2"
+  },
+  {
+   "fieldname": "retentation_amt",
+   "fieldtype": "Float",
+   "label": "Retentation Amount",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_tlzb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount_after_retentation",
+   "fieldtype": "Float",
+   "label": "Amount After Retentation",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fetch_from": "sales_order.net_total_copy",
+   "fieldname": "project_amount",
+   "fieldtype": "Float",
+   "label": "Project Amount",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_updt",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Progress Details"
+  },
+  {
+   "fieldname": "project_stage_table",
+   "fieldtype": "Table",
+   "label": "Project Stage",
+   "options": "Project Stage Table"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "advance_amount",
+   "fieldtype": "Float",
+   "label": "Advance Amount",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_type",
+   "fieldtype": "Select",
+   "label": "Project Type",
+   "options": "\nSupply\nService\nBoth"
+  },
+  {
+   "fieldname": "progress_entry",
+   "fieldtype": "Link",
+   "label": "Progress Entry",
+   "options": "Progress Entry"
+  },
+  {
+   "fetch_from": "progress_entry.average_of_completion",
+   "fieldname": "average__of_completion",
+   "fieldtype": "Percent",
+   "label": "Average % Of Completion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xcaf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_snci",
+   "fieldtype": "Section Break",
+   "label": "Progress Details Section"
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Service"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Advance Entry",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Progress Entry",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Warehouse",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Timesheet",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Task",
+   "link_fieldname": "project"
+  },
+  {
+   "link_doctype": "Planning",
+   "link_fieldname": "project"
+  }
+ ],
+ "modified": "2024-09-11 13:43:30.689419",
+ "modified_by": "Administrator",
+ "module": "Project",
+ "name": "Project",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

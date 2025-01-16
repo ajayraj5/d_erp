@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-02 11:52:32.759336",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "progress_entry",
+  "date_of_creation",
+  "project_stage_defination",
+  "schedule_of_project",
+  "percentage_of_completion",
+  "proforma_invoice",
+  "sales_invoice",
+  "net_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_stage_defination",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Project Stage Defination"
+  },
+  {
+   "fieldname": "schedule_of_project",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Schedule Of Project"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "progress_entry.average_of_completion",
+   "fieldname": "percentage_of_completion",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Average Of Completion",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "proforma_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Proforma Invoice",
+   "options": "Proforma Invoice"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoice",
+   "options": "Progressive Sales Invoice"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "sales_invoice.net_total",
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Total",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "progress_entry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Progress Entry",
+   "options": "Progress Entry"
+  },
+  {
+   "fetch_from": "progress_entry.posting_date",
+   "fieldname": "date_of_creation",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Of Creation",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-21 14:47:52.619747",
+ "modified_by": "Administrator",
+ "module": "Project",
+ "name": "Project Stage Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

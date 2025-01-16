@@ -1,0 +1,234 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:item_code",
+ "creation": "2022-12-09 06:24:45.198426",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "description",
+  "base_unit",
+  "column_break_4",
+  "item_group",
+  "brand",
+  "maintain_stock",
+  "is_fixed_asset",
+  "asset_category",
+  "tax_excluded",
+  "tax",
+  "section_break_ohog",
+  "standard_buying_price",
+  "margin_",
+  "standard_selling_price",
+  "column_break_izch",
+  "stock_balance",
+  "item_valuation_rate",
+  "stock_value",
+  "section_break_20",
+  "units",
+  "disabled",
+  "tab_break_14",
+  "customer_rates",
+  "supplier_prices_tab",
+  "supplier_rates",
+  "do_not_update_price"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Item Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Item Name",
+   "unique": 1
+  },
+  {
+   "default": "PCS",
+   "fieldname": "base_unit",
+   "fieldtype": "Link",
+   "label": "Base Unit",
+   "options": "Unit"
+  },
+  {
+   "default": "All Item Groups",
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_standard_filter": 1,
+   "label": "Item Group",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Link",
+   "label": "Tax",
+   "options": "Tax"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "standard_selling_price",
+   "fieldtype": "Currency",
+   "label": "Standard Selling Price"
+  },
+  {
+   "default": "0.00",
+   "fieldname": "standard_buying_price",
+   "fieldtype": "Currency",
+   "label": "Standard Buying Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "tab_break_14",
+   "fieldtype": "Tab Break",
+   "label": "Customer Prices"
+  },
+  {
+   "fieldname": "customer_rates",
+   "fieldtype": "Table",
+   "label": "Customer Prices",
+   "options": "Customer Item"
+  },
+  {
+   "fieldname": "supplier_rates",
+   "fieldtype": "Table",
+   "label": "Supplier Prices",
+   "options": "Supplier Item"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_excluded",
+   "fieldtype": "Check",
+   "label": "Tax Not Applicable"
+  },
+  {
+   "default": "0",
+   "fieldname": "maintain_stock",
+   "fieldtype": "Check",
+   "label": "Maintain Stock"
+  },
+  {
+   "fieldname": "supplier_prices_tab",
+   "fieldtype": "Tab Break",
+   "label": "Supplier Prices"
+  },
+  {
+   "description": "For multiple units, adjust the conversion factor based on the quantity of units corresponding to the base unit. For instance, if a box holds 10 pieces of an item, then the conversion factor listed in the row for the 'Box' unit ought to be 10.",
+   "fieldname": "units",
+   "fieldtype": "Table",
+   "label": "Units",
+   "options": "Item Unit"
+  },
+  {
+   "fieldname": "stock_balance",
+   "fieldtype": "Float",
+   "label": "Stock Balance(Base Unit)"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "stock_value",
+   "fieldtype": "Currency",
+   "label": "Stock Value"
+  },
+  {
+   "default": "0",
+   "fieldname": "do_not_update_price",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Do Not Update Price"
+  },
+  {
+   "fieldname": "section_break_ohog",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "margin_",
+   "fieldtype": "Float",
+   "label": "Margin %"
+  },
+  {
+   "description": "The valuation rate is applied to facilitate sales transactions for the item before the purchase entry is recorded.",
+   "fieldname": "item_valuation_rate",
+   "fieldtype": "Currency",
+   "label": "Valuation Rate"
+  },
+  {
+   "fieldname": "column_break_izch",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_fixed_asset",
+   "fieldtype": "Check",
+   "label": "Is Fixed Asset"
+  },
+  {
+   "depends_on": "eval:doc.is_fixed_asset==1",
+   "fieldname": "asset_category",
+   "fieldtype": "Link",
+   "label": "Asset Category",
+   "mandatory_depends_on": "eval:doc.is_fixed_asset == 1",
+   "options": "Asset Category"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-03-31 19:48:19.150606",
+ "modified_by": "Administrator",
+ "module": "Stock",
+ "name": "Item",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "item_code,item_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
